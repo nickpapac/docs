@@ -4,7 +4,7 @@
 
 This repository contains everything that is needed to get started with Spanner CI. It's highly recommended to make a fork of this repository and use it as a starting point to understand how Spanner CI can be easily integrated with your own github repository.
 
-In the next sections you'll find detailed information of how to setup Spanner CI. In short, we will create an account in Spanner CI Platform and use a `.spannerci.yml` configuration file in the root directory of our repository to trigger Spanner CI for every commit or pull request. Each time Spanner CI is triggered, it reads the instructions in `.spannerci.yml` file and starts the relevant service, like automated builds or automated tests. All the test scripts are also part of the repository.  
+In the next sections you'll find detailed information of how to setup Spanner CI. In short, we will create an account in Spanner CI Platform and use a `.spannerci.yml` configuration file in the root directory of our repository to trigger Spanner CI for every commit or pull request. Each time Spanner CI is triggered, it reads the instructions from `.spannerci.yml` file and starts the relevant service, like automated builds or automated tests. All the test scripts are also part of the repository.  
 
 ## Creating an Account
 If you haven't used Spanner CI before, you can create a new account by visiting the [Create an Account](http://console.spannerci.com/app/accounts/register) page. To sign-up, you can either use your GitHub account (recommended) or create a new account directly from Spanner.
@@ -22,15 +22,43 @@ If you already have a GitHub account click the `SIGN UP WITH GITHUB` button. Thi
 ### About the Spanner CI App in GitHub
 Spanner provides an official Github Spanner CI Application for easy integration with GitHub. This authorises the Spanner CI platform to access Github repositories. The application can be found at: https://github.com/apps/spannerci-app and will be installed as described in the above steps. 
 
-## Spanner Configuration
+## Configuration with .spannerci.yml
+Spanner CI enables continuous integration by adding a `.spannerci.yml` file in the root directory of your repository. This, together with some more configuration options that are mentioned later, make every new commit or pull request to automatically trigger Spanner. 
 
-TODO
+Basically, the `.spannerci.yml` tells Spanner what to do. By default, it runs with three stages: 
 
-The most important setting of this file is the path of the script that contains the example test. In the folder `examples/` can be found example test scripts for various use cases. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
+1. `code_qa` for code quality checks
+2. `build_binary` for firmware builds
+3. `testing` for functional tests on real hardware
 
-1. **Basic Tests**, which only perform one action and one test, to showcase that individual test function
-2. **Simple Tests**, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
-3. **Complex Tests**, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
+You don't need to use all the above stages and stages with no definitions will be ignored. Each stage contains definitions on what to do. Testing stage includes a `binary_update` job that is used to update the device firmware. A sample `.spannerci.yml` file can be seen below:
+
+```
+code_qa:
+    type: basic
+
+build_binary:
+    type: 'particle photon'
+    source_dir: 'app'
+    build_command: make
+    binary_name: binary_demo
+    pre_flight:
+    post_flight:
+    on_failure:
+    on_success:
+
+testing:
+    source_dir: 'examples/basic-tests/GPIO/read-digital-output/scenario.py'    
+    binary_update:
+        platform: 'particle photon'
+        binary: auto
+```
+
+The testing stage contains the path (`source_dir`) to the testing script. This is a Python script that we can write all the functional tests. Example test scripts can be found under `examples` folder. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
+
+1. `Basic Tests`, which only perform one action and one test, to showcase that individual test function
+2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
+3. `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
 
 ## Spanner Projects
 Spanner supports the creation of one or more projects for working with different repositories. To create a new project:
