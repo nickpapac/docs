@@ -7,37 +7,20 @@ This repository contains everything that is needed to get started with Spanner C
 In the next sections you'll find detailed information of how to setup Spanner CI. In short, we will create an account in Spanner CI Platform and use a `.spannerci.yml` configuration file in the root directory of our repository to trigger Spanner CI for every commit or pull request. Each time Spanner CI is triggered, it reads the instructions in `.spannerci.yml` file and starts the relevant service, like automated builds or automated tests. All the test scripts are also part of the repository.  
 
 ## Creating an Account
+If you haven't used Spanner CI before, you can create a new account by visiting the [Create an Account](http://console.spannerci.com/app/accounts/register) page. To sign-up, you can either use your GitHub account (recommended) or create a new account directly from Spanner.
 
-If you haven't used Spanner CI before, you can create a new account: 
+### Option1: Sign-Up with GitHub ###
+If you already have a GitHub account click the `SIGN UP WITH GITHUB` button. This will redirect you to GitHub to authorize and install the Spanner App and then you'll be automatically sign-in to the Spanner CI Platform where you can fill your organization info and start using Spanner. That's the recommended way to sign-up because it doesn't require further actions regarding the Spanner integration with GitHub. Details about the GitHub integration can be then found under the [Integrations](http://console.spannerci.com/app/integrations) page. 
 
-1. Visit the [Create an Account](http://console.spannerci.com/app/accounts/register) page.
-2. If you already have a GitHub account click the `SIGN UP WITH GITHUB` button otherwise enter your basic information and click `REGISTER` to continue.
-3. Use the credentials provided above to sign-in.
-4. Enter your organization info and you're ready to go!
+### Option 2: Regular Sign-Up ###
+1. Enter your basic information and click `REGISTER` to continue.
+2. Use the credentials provided above to sign-in.
+3. Enter your organization info to access the Spanner UI. Next step is to integrate Spanner CI with GitHub.
+4. Go to the [Integrations](http://console.spannerci.com/app/integrations) page under the Organization section.
+5. Under the available integrations, click the `GitHub App` and then the `Add! ` button. This will redirect you to GitHub to authorize and install the Spanner CI App, which will complete the integration with GitHub.
 
-Next step is to integrate Spanner CI with GitHub.
-
-**Note**: By signing in with GitHub, the `GitHub Authorization` section below can be skipped.
-
-## Integration with GitHub
-
-Spanner provides an official Github Spanner CI Application for easy integration with GitHub. This authorises the Spanner CI platform to access Github repositories. 
-
-#### Create a Github repository:
-To freely experiment with the **Spanner CI Test Examples**, it is necessary to fork this repository into your Github account.
-
-#### Installation of GitHub Spanner CI App:
-1. Visit https://github.com/apps/spannerci-app
-2. Click on install.
-3. Select the repository that you created in the previous section in order to provide access to the Spanner CI platform.
-
-Note: that the account where the GitHub Spanner CI app is installed, must be the same as the one authorised using the GitHub sign in. 
-
-#### GitHub Authorization:
-1. After sign in the Spanner CI platform, click the username on the left upper corner.
-2. Select Settings on the dropdown menu.
-3. Click on the "Connect with Github" button to link the GitHub account with Spanner CI.
-4. Spanner CI account is ready and authorised to use the selected GitHub repositories.
+### About the Spanner CI App in GitHub
+Spanner provides an official Github Spanner CI Application for easy integration with GitHub. This authorises the Spanner CI platform to access Github repositories. The application can be found at: https://github.com/apps/spannerci-app and will be installed as described in the above steps. 
 
 ## Spanner Configuration
 
