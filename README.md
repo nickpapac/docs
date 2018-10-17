@@ -9,7 +9,7 @@ In the next sections you'll find detailed information of how to setup Spanner CI
 ## Creating an Account
 If you haven't used Spanner CI before, you can create a new account by visiting the [Create an Account](http://console.spannerci.com/app/accounts/register) page. To sign-up, you can either use your GitHub account (recommended) or create a new account directly from Spanner.
 
-### Option1: Sign-Up with GitHub ###
+### Option 1: Sign-Up with GitHub ###
 If you already have a GitHub account click the `SIGN UP WITH GITHUB` button. This will redirect you to GitHub to authorize and install the Spanner App and then you'll be automatically sign-in to the Spanner CI Platform where you can fill your organization info and start using Spanner. That's the recommended way to sign-up because it doesn't require further actions regarding the Spanner integration with GitHub. Details about the GitHub integration can be then found under the [Integrations](http://console.spannerci.com/app/integrations) page. 
 
 ### Option 2: Regular Sign-Up ###
@@ -24,16 +24,8 @@ Spanner provides an official Github Spanner CI Application for easy integration 
 
 ## Spanner Configuration
 
-Modify .spannerci.json configuration file to enable Spanner CI integration. The structure of the file is shown below:
+TODO
 
-    {
-      "code_quality": false,
-      "build_binary": false,
-      "deploy": false,
-      "tests": false,
-      "script": "path/to/script/myscript.py"
-    }
-    
 The most important setting of this file is the path of the script that contains the example test. In the folder `examples/` can be found example test scripts for various use cases. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
 
 1. **Basic Tests**, which only perform one action and one test, to showcase that individual test function
@@ -45,18 +37,13 @@ Spanner supports the creation of one or more projects for working with different
 
 1. Select Projects from the navigation menu on the left side of the dashboard.
 2. Click on New Project.
-3. Select the repository from the connected repositories on Github.
-4. Click on create project.
+TODO
 
 ## Spanner Jobs
 Spanner executes each test script inside a virtual environment. For each run, a new job is created. Jobs can run automatically (through pull requests) or manually as described below.
 
 ### Manual Job Creation:
-1. Click on projects, from the navigation menu on the left side of the dashboard.
-2. Select the run by Branch or Commit option. By selecting run by commit, the commit id (sha hash) should manually be provided. By selecting the branch option, an available branch from the repository can be selected.
-3. Click on the play Button to start the new job.
-4. If any errors have occurred, an alert message will appear prompting the error on the test script.
-5. If the test has completed successfully, a message will appear and the user will be redirected to the Jobs page.
+TODO
 
 ### Job Creation from Pull Request
 
