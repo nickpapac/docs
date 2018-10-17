@@ -31,7 +31,7 @@ Basically, the `.spannerci.yml` tells Spanner what to do. By default, it runs wi
 2. `build_binary` for firmware builds
 3. `testing` for functional tests on real hardware
 
-You don't need to use all the above stages and stages with no definitions will be ignored. Each stage contains definitions on what to do. Testing stage includes a `binary_update` job that is used to update the device firmware. A sample `.spannerci.yml` file can be seen below:
+You don't need to use all the above stages and stages with no definitions will be ignored. Each stage contains definitions on what to do. Testing stage includes a `binary_update` sub-stage that is used to update the device firmware. A sample `.spannerci.yml` file is shown below:
 
 ```
 code_qa:
