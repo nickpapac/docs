@@ -1,9 +1,9 @@
 # Spanner CI #
 
 ## Table of Contents
-* [Introduction](#introduction) <a name="introduction"/>
+* [Introduction](#introduction)
 * [Creating An Account](#creating-an-account) 
-* [Configuration with .spannerci.yml](#configuration-with-spannerciyml) <a name="configuration"/>
+* [Configuration with .spannerci.yml](#configuration-with-spannerciyml)
 * [TODO...](#todo)
 
 
