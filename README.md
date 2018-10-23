@@ -85,7 +85,7 @@ A stage is defined by a list of parameters that define the stage behavior.
 | on_failure    | No  | Override a set of commands that are executed on failure of stage |
 | on_success    | No  | Override a set of commands that are executed on success of stage |
 
-(1),(2): Please contact us to get a full list of the currently supported device builders and OTA update methods. To get started, make sure to check the `Examples` section.
+(1),(2): Please contact us to get a full list of the currently supported device builders and OTA update methods. To get started, make sure to check the [Examples](#examples) section.
 
 The testing stage contains the `script` parameter to define the path to the testing script. This is a Python script that we can write all the functional tests. Example test scripts can be found under `examples` folder. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
 
@@ -122,5 +122,5 @@ This will automatically trigger a Spanner CI Job on each Pull Request
 ## Spanner CLI
 Spanner provides a Command Line Interface (CLI) which can be used instead of the Web Interface. For more information please contact us.
 
-## Examples (TODO)
+## Examples
 TODO
