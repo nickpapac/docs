@@ -36,6 +36,7 @@ You don't need to use all the above stages and stages with no definitions will b
 ```
 code_qa:
     level: basic
+    source: firmware/
 
 build_binary:
     pre_flight:
@@ -62,7 +63,7 @@ A stage is defined by a list of parameters that define the stage behavior.
 
 | Keyword | Required | Description |
 | :--- | :--- | :--- |
-| level         | Yes | Defines the service level |
+| level         | No  | Defines the service level |
 | builder       | Yes | Defines the preferred build environment (1) |
 | source        | Yes | Defines the source directory of the firmware |
 | script        | Yes | Defines the script path or command to execute |
