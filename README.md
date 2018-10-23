@@ -63,18 +63,20 @@ A stage is defined by a list of parameters that define the stage behavior.
 | Keyword | Required | Description |
 | :--- | :--- | :--- |
 | level         | Yes | Defines the service level |
-| builder       | Yes | Defines the preferred build environment |
+| builder       | Yes | Defines the preferred build environment (1) |
 | source        | Yes | Defines the source directory of the firmware |
 | script        | Yes | Defines the script path or command to execute |
 | artifacts     | No  | Defines the artifacts path |
 | device_update | No  | Enables OTA update of devices before testing |
 | devices       | Yes | Defines a list of devices to apply the OTA update |
-| ota_platform  | Yes | Defines the platform name for OTA updates |
+| ota_method    | Yes | Defines the preferred method for OTA updates (2) |
 | binary        | Yes | Defines the binary source for OTA updates (auto, URL or repo path) |
 | pre_flight    | No  | Override a set of commands that are executed before stage |
 | post_flight   | No  | Override a set of commands that are executed after stage |
 | on_failure    | No  | Override a set of commands that are executed on failure of stage |
 | on_success    | No  | Override a set of commands that are executed on success of stage |
+
+(1),(2): Please contact us to get a full list of the currently supported device builders and OTA update methods. To get started, make sure to check the `Examples` section.
 
 The testing stage contains the (`script`) parameter to define the path to the testing script. This is a Python script that we can write all the functional tests. Example test scripts can be found under `examples` folder. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
 
