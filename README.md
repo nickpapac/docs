@@ -82,20 +82,20 @@ The testing stage contains the (`script`) parameter to define the path to the te
 2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
 3. `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
 
-## Spanner Projects
+## Projects (TODO)
 Spanner supports the creation of one or more projects for working with different repositories. To create a new project:
 
 1. Select Projects from the navigation menu on the left side of the dashboard.
 2. Click on New Project.
-TODO
+...
 
-## Spanner Jobs
+## Project Jobs (TODO)
 Spanner executes each test script inside a virtual environment. For each run, a new job is created. Jobs can run automatically (through pull requests) or manually as described below.
 
-### Manual Job Creation:
+### Manual Job Creation (TODO)
 TODO
 
-### Job Creation from Pull Request
+### Job Creation from Pull Request (TODO)
 
 This will automatically trigger a Spanner CI Job on each Pull Request
 
@@ -103,11 +103,13 @@ This will automatically trigger a Spanner CI Job on each Pull Request
 2. Create a new Pull request and wait for the notification messages delivered from the SpannerCI platform.
 3. After the completion of the test cases, a message will appear together with a link to the SpannerCI platform with more information, on the run itself.
 
-### Job History
-
+### Job History (TODO)
 1. Click on Jobs from the navigation menu on the left side of the dashboard.
 2. A list of the latest running jobs will be shown.
 3. By clicking the Stats button on each job, enables us to watch each running test and their corresponding results.
 
 ## Spanner CLI
 Spanner provides a Command Line Interface (CLI) which can be used instead of the Web Interface. For more information please contact us.
+
+## Examples (TODO)
+TODO
