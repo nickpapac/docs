@@ -27,9 +27,9 @@ Spanner CI enables continuous integration by adding a `.spannerci.yml` file in t
 
 Basically, the `.spannerci.yml` tells Spanner what to do. By default, it runs with three stages: 
 
-1. `code_qa` for code quality checks
-2. `build_binary` for firmware builds
-3. `testing` for functional tests on real hardware
+1. `code_qa` stage for code quality checks
+2. `build_binary` stage for firmware builds
+3. `testing` stage for functional tests on real hardware
 
 You don't need to use all the above stages and stages with no definitions will be ignored. Each stage contains definitions on what to do. Testing stage includes a `binary_update` sub-stage that is used to update the device firmware. A sample `.spannerci.yml` file is shown below:
 
@@ -53,6 +53,18 @@ testing:
         platform: 'particle photon'
         binary: auto
 ```
+
+A stage is defined by a list of parameters that define the stage behavior.
+
+| Keyword | Required | Description |
+| :--- | :--- | :--- |
+| codeqa_type   | Yes | Defines the selected code quality type |
+| type          | Yes | Defines build platform |
+| source_dir    | Yes | Defines test script path |
+| build_command | Yes | Defines build command |
+| binary_name   | Yes | Defines the output binary name |
+| platform      | Yes | Defines the platform name |
+
 
 The testing stage contains the path (`source_dir`) to the testing script. This is a Python script that we can write all the functional tests. Example test scripts can be found under `examples` folder. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
 
