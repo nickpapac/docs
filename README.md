@@ -1,13 +1,11 @@
 # Spanner CI #
 
 ## Table of Contents
-* [Introduction](#introduction)
-* [Creating An Account](#creating)
-* [Configuration with .spannerci.yml](#configuration)
-* TODO...
-<a name="introduction"/>
-<a name="creating"/>
-<a name="configuration"/>
+* [Introduction](#introduction) <a name="introduction"/>
+* [Creating An Account](#creating) <a name="creating"/>
+* [Configuration with .spannerci.yml](#configuration) <a name="configuration"/>
+* [TODO...](#todo)
+
 
 ## Introduction
 [Spanner CI](https://spannerci.com) is a Continuous Integration Platform for IoT and Embedded Devices. It can be used for automated code quality checks, automated firmware builds and automated functional tests in real hardware that run with every new version of your firmware.
