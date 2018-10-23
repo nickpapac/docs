@@ -78,7 +78,7 @@ A stage is defined by a list of parameters that define the stage behavior.
 
 (1),(2): Please contact us to get a full list of the currently supported device builders and OTA update methods. To get started, make sure to check the `Examples` section.
 
-The testing stage contains the (`script`) parameter to define the path to the testing script. This is a Python script that we can write all the functional tests. Example test scripts can be found under `examples` folder. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
+The testing stage contains the `script` parameter to define the path to the testing script. This is a Python script that we can write all the functional tests. Example test scripts can be found under `examples` folder. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
 
 1. `Basic Tests`, which only perform one action and one test, to showcase that individual test function
 2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
