@@ -2,7 +2,7 @@
 
 ## Table of Contents
 * [Introduction](#introduction) <a name="introduction"/>
-* [Creating An Account](#creating) <a name="creating"/>
+* [Creating An Account](#creating-an-account) <a name="creating"/>
 * [Configuration with .spannerci.yml](#configuration) <a name="configuration"/>
 * [TODO...](#todo)
 
