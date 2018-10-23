@@ -31,7 +31,7 @@ Basically, the `.spannerci.yml` tells Spanner what to do. By default, it runs wi
 2. `build_binary` stage for firmware builds
 3. `testing` stage for functional tests on real hardware
 
-You don't need to use all the above stages and stages with no definitions will be ignored. Each stage contains definitions on what to do. Testing stage includes a `binary_update` sub-stage that is used to update the device firmware. A sample `.spannerci.yml` file is shown below:
+You don't need to use all the above stages and stages with no definitions will be ignored. Each stage contains definitions on what to do. A sample `.spannerci.yml` file is shown below:
 
 ```
 code_qa:
@@ -39,8 +39,8 @@ code_qa:
 
 build_binary:
     pre_flight:
-    sdk: particle photon
-    firmware: firmware_app/
+    builder: particle photon
+    source: firmware/
     script: make
     artifacts:
         - binary_output/
@@ -63,7 +63,8 @@ A stage is defined by a list of parameters that define the stage behavior.
 | Keyword | Required | Description |
 | :--- | :--- | :--- |
 | level         | Yes | Defines the service level |
-| sdk           | Yes | Defines device SDK |
+| builder       | Yes | Defines the preferred build environment |
+| source        | Yes | Defines the source directory of the firmware |
 | script        | Yes | Defines the script path or command to execute |
 | artifacts     | No  | Defines the artifacts path |
 | device_update | No  | Enables OTA update of devices before testing |
@@ -74,7 +75,6 @@ A stage is defined by a list of parameters that define the stage behavior.
 | post_flight   | No  | Override a set of commands that are executed after stage |
 | on_failure    | No  | Override a set of commands that are executed on failure of stage |
 | on_success    | No  | Override a set of commands that are executed on success of stage |
-
 
 The testing stage contains the (`script`) parameter to define the path to the testing script. This is a Python script that we can write all the functional tests. Example test scripts can be found under `examples` folder. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
 
