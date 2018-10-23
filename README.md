@@ -2,8 +2,8 @@
 
 ## Table of Contents
 * [Introduction](#introduction) <a name="introduction"/>
-* [Creating An Account](#creating-an-account) <a name="creating"/>
-* [Configuration with .spannerci.yml](#configuration) <a name="configuration"/>
+* [Creating An Account](#creating-an-account) 
+* [Configuration with .spannerci.yml](#configuration-with-spannerciyml) <a name="configuration"/>
 * [TODO...](#todo)
 
 
