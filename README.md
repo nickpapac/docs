@@ -39,20 +39,22 @@ code_qa:
 
 build_binary:
     pre_flight:
-    sdk: 'particle photon'
-    firmware: 'firmware_app'
+    sdk: particle photon
+    firmware: firmware_app/
     script: make
-    artifacts: binary_demo
+    artifacts:
+        - binary_output/
     post_flight:
     on_failure:
     on_success:
 
 testing:
-    script: 'examples/basic-tests/GPIO/read-digital-output/scenario.py'    
+    script: examples/basic-tests/GPIO/read-digital-output/scenario.py
     device_update:
-        devices: 
+        devices:
             - ENV_DEVID_1
-        ota_platform: 'particle photon'
+            - ENV_DEVID_2
+        ota_platform: particle photon
         binary: auto
 ```
 
@@ -66,8 +68,8 @@ A stage is defined by a list of parameters that define the stage behavior.
 | artifacts     | No  | Defines the artifacts path |
 | device_update | No  | Enables OTA update of devices before testing |
 | devices       | Yes | Defines a list of devices to apply the OTA update |
-| ota_platform  | Yes | Defines the platform name for OTA updates|
-| binary        | Yes | Defines the binary source for OTA updates |
+| ota_platform  | Yes | Defines the platform name for OTA updates |
+| binary        | Yes | Defines the binary source for OTA updates (auto, URL or repo path) |
 | pre_flight    | No  | Override a set of commands that are executed before stage |
 | post_flight   | No  | Override a set of commands that are executed after stage |
 | on_failure    | No  | Override a set of commands that are executed on failure of stage |
