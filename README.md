@@ -35,22 +35,24 @@ You don't need to use all the above stages and stages with no definitions will b
 
 ```
 code_qa:
-    type: basic
+    level: basic
 
 build_binary:
-    type: 'particle photon'
-    source_dir: 'app'
-    build_command: make
-    binary_name: binary_demo
     pre_flight:
+    sdk: 'particle photon'
+    firmware: 'firmware_app'
+    script: make
+    artifacts: binary_demo
     post_flight:
     on_failure:
     on_success:
 
 testing:
-    source_dir: 'examples/basic-tests/GPIO/read-digital-output/scenario.py'    
-    binary_update:
-        platform: 'particle photon'
+    script: 'examples/basic-tests/GPIO/read-digital-output/scenario.py'    
+    device_update:
+        devices: 
+            - ENV_DEVID_1
+        ota_platform: 'particle photon'
         binary: auto
 ```
 
@@ -58,15 +60,21 @@ A stage is defined by a list of parameters that define the stage behavior.
 
 | Keyword | Required | Description |
 | :--- | :--- | :--- |
-| codeqa_type   | Yes | Defines the selected code quality type |
-| type          | Yes | Defines build platform |
-| source_dir    | Yes | Defines test script path |
-| build_command | Yes | Defines build command |
-| binary_name   | Yes | Defines the output binary name |
-| platform      | Yes | Defines the platform name |
+| level         | Yes | Defines the service level |
+| sdk           | Yes | Defines device SDK |
+| script        | Yes | Defines the script path or command to execute |
+| artifacts     | No  | Defines the artifacts path |
+| device_update | No  | Enables OTA update of devices before testing |
+| devices       | Yes | Defines a list of devices to apply the OTA update |
+| ota_platform  | Yes | Defines the platform name for OTA updates|
+| binary        | Yes | Defines the binary source for OTA updates |
+| pre_flight    | No  | Override a set of commands that are executed before stage |
+| post_flight   | No  | Override a set of commands that are executed after stage |
+| on_failure    | No  | Override a set of commands that are executed on failure of stage |
+| on_success    | No  | Override a set of commands that are executed on success of stage |
 
 
-The testing stage contains the path (`source_dir`) to the testing script. This is a Python script that we can write all the functional tests. Example test scripts can be found under `examples` folder. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
+The testing stage contains the (`script`) parameter to define the path to the testing script. This is a Python script that we can write all the functional tests. Example test scripts can be found under `examples` folder. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
 
 1. `Basic Tests`, which only perform one action and one test, to showcase that individual test function
 2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
