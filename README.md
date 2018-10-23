@@ -54,7 +54,7 @@ testing:
         devices:
             - ENV_DEVID_1
             - ENV_DEVID_2
-        ota_platform: particle photon
+        ota_method: particle
         binary: auto
 ```
 
