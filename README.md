@@ -4,9 +4,9 @@
 * [Introduction](#introduction)
 * [How It Works](#how-it-works)
 * [Creating An Account](#creating-an-account) 
+* [Projects](#projects)
 * [Configuration with .spannerci.yml](#configuration-with-spannerciyml)
 * [TODO...](#todo)
-
 
 ## Introduction
 [Spanner CI](https://spannerci.com) is a Continuous Integration Platform for IoT and Embedded Devices. It can be used for automated code quality checks, automated firmware builds and automated functional tests in real hardware that run with every new version of your firmware.
@@ -33,6 +33,15 @@ If you already have a GitHub account click the `SIGN UP WITH GITHUB` button. Thi
 
 ### About the Spanner CI App in GitHub
 Spanner provides an official Github Spanner CI Application for easy integration with GitHub. This authorises the Spanner CI platform to access Github repositories. The application can be found at: https://github.com/apps/spannerci-app and will be installed as described in the above steps. 
+
+## Projects
+Spanner supports the creation of one or more projects for working with different repositories. Each project represents one user repository. To create a new project:
+
+1. Select Projects from the navigation menu on the left side of the dashboard.
+2. Click on New Project.
+3. Select the preferred source code repository.
+4. Add one or more Testboards.
+5. Click Finish to complete the project creation.
 
 ## Configuration with .spannerci.yml
 Spanner CI enables continuous integration by adding a `.spannerci.yml` file in the root directory of your repository. This, together with some more configuration options that are mentioned later, make every new commit or pull request to automatically trigger Spanner. 
@@ -97,13 +106,6 @@ The testing stage contains the `script` parameter to define the path to the test
 1. `Basic Tests`, which only perform one action and one test, to showcase that individual test function
 2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
 3. `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
-
-## Projects (TODO)
-Spanner supports the creation of one or more projects for working with different repositories. To create a new project:
-
-1. Select Projects from the navigation menu on the left side of the dashboard.
-2. Click on New Project.
-...
 
 ## Project Jobs (TODO)
 Spanner executes each test script inside a virtual environment. For each run, a new job is created. Jobs can run automatically (through pull requests) or manually as described below.
