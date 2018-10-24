@@ -56,7 +56,7 @@ New Jobs can also be created manually. Each Job belongs to a specific Project. A
 Also note, that because of the Spanner integration with GitHub, it's possible to watch the Job result directly from GitHub, after creating a new Pull Request.
 
 ## Environment Variables
-TODO
+Spanner supports the definition of environment variables for each Project. These variables can be defined from the Project Settings page and can be then used in the [.spannerci.yml](#configuration-with-spannerciyml) file and in the user defined [test scripts](#test-scripts). For example, we can use environment variables to define a list of device IDs that will be later used in the `.spannerci.yml` file to update these devices. Another usage example is the various access tokens, secrets and other credentials that we need to hide from the test scripts.  
 
 ## Configuration with .spannerci.yml
 Spanner CI enables continuous integration by adding a `.spannerci.yml` file in the root directory of your repository. This, together with some more configuration options that are mentioned later, make every new commit or pull request to automatically trigger Spanner. 
