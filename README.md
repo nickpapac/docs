@@ -26,17 +26,17 @@ As soon as we create an account and make a new Project in Spanner CI Platform, w
 ## Creating an Account
 If you haven't used Spanner CI before, you can create a new account by visiting the [Create an Account](http://console.spannerci.com/app/accounts/register) page. To sign-up, you can either use your GitHub account (recommended) or create a new account directly from Spanner.
 
-### Option 1: Sign-Up with GitHub ###
+#### Option 1: Sign-Up with GitHub ###
 If you already have a GitHub account click the `SIGN UP WITH GITHUB` button. This will redirect you to GitHub to authorize and install the Spanner App and then you'll be automatically sign-in to the Spanner CI Platform where you can fill your organization info and start using Spanner. That's the recommended way to sign-up because it doesn't require further actions regarding the Spanner integration with GitHub. Details about the GitHub integration can be then found under the [Integrations](http://console.spannerci.com/app/integrations) page. 
 
-### Option 2: Regular Sign-Up ###
+#### Option 2: Regular Sign-Up ###
 1. Enter your basic information and click `REGISTER` to continue.
 2. Use the credentials provided above to sign-in.
 3. Enter your organization info to access the Spanner UI. Next step is to integrate Spanner CI with GitHub.
 4. Go to the [Integrations](http://console.spannerci.com/app/integrations) page under the Organization section.
 5. Under the available integrations, click the `GitHub App` and then the `Add! ` button. This will redirect you to GitHub to authorize and install the Spanner CI App, which will complete the integration with GitHub.
 
-### About the Spanner CI App in GitHub
+#### About the Spanner CI App in GitHub
 Spanner provides an official Github Spanner CI Application for easy integration with GitHub. This authorises the Spanner CI platform to access Github repositories. The application can be found at: https://github.com/apps/spannerci-app and will be installed as described in the above steps. 
 
 ## Projects
