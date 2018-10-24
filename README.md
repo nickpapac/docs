@@ -40,28 +40,20 @@ If you already have a GitHub account click the `SIGN UP WITH GITHUB` button. Thi
 Spanner provides an official Github Spanner CI Application for easy integration with GitHub. This authorises the Spanner CI platform to access Github repositories. The application can be found at: https://github.com/apps/spannerci-app and will be installed as described in the above steps. 
 
 ## Projects
-Spanner supports the creation of one or more projects for working with different repositories. Each project represents one user repository. To create a new project:
+Spanner supports the creation of one or more Projects for working with different repositories. Each Project represents one user repository. To create a new Project:
 
 1. Select Projects from the navigation menu on the left side of the dashboard.
 2. Click on New Project.
 3. Select the preferred source code repository.
 4. Add one or more [Testboards](#testboards).
-5. Click Finish to complete the project creation.
+5. Click Finish to complete the Project creation.
 
 ## Project Jobs
-Spanner executes each test script inside a virtual environment. For each run, a new job is created. Jobs can run automatically (through pull requests) or manually as described below.
+Each time Spanner CI is triggered from a source code commit or pull request a new Job is created automatically. Every Job gets the instructions on what to do from the `.spannerci.yml` file and then runs inside a virtual environment. Upon completion, Jobs provide the output result for each running stage and the resulted artifacts (e.g firmware binaries), if any. Moreover, in the `Testing` stage, the output result for each test case is provided. 
 
-### Job Creation from Pull Request (TODO)
-This will automatically trigger a Spanner CI Job on each Pull Request
+New Jobs can also be created manually. Each Job belongs to a specific Project. A list with all the Project Jobs can be found under the Project page (accessible by clicking a Project name in the [Projects](http://console.spannerci.com/app/projects) page). From there, it's possible to get various information about each Job, download any artifacts or even watch any Job runtime or at a later time.
 
-1. Click on the Pull request button in the Github Repository homepage.
-2. Create a new Pull request and wait for the notification messages delivered from the SpannerCI platform.
-3. After the completion of the test cases, a message will appear together with a link to the SpannerCI platform with more information, on the run itself.
-
-### Job History (TODO)
-1. Click on Jobs from the navigation menu on the left side of the dashboard.
-2. A list of the latest running jobs will be shown.
-3. By clicking the Stats button on each job, enables us to watch each running test and their corresponding results.
+Also note, that because of the Spanner integration with GitHub, it's possible to watch the Job result directly from GitHub, after creating a new Pull Request.
 
 ## Environment Variables
 TODO
