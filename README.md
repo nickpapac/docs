@@ -56,7 +56,7 @@ New Jobs can also be created manually. Each Job belongs to a specific Project. A
 Also note, that because of the Spanner integration with GitHub, it's possible to watch the Job result directly from GitHub, after creating a new Pull Request.
 
 ## Environment Variables
-Spanner supports the definition of environment variables for each Project. These variables can be defined from the Project Settings page and can be then used in the [.spannerci.yml](#configuration-with-spannerciyml) file and in the user defined [test scripts](#test-scripts). For example, we can use environment variables to define a list of device IDs that will be later used in the `.spannerci.yml` file to update these devices. Another usage example is the various access tokens, secrets and other credentials that we need to hide from the test scripts.  
+Spanner supports the definition of environment variables for each Project. These variables can be defined from the Project Settings page and can be then used in the [.spannerci.yml](#configuration-with-spannerciyml) file and in the user defined [test scripts](#test-scripts). All the Spanner environment variables include an `ENV_` prefix. For example, we can use environment variables to define a list of device IDs that will be later used in the `.spannerci.yml` file to update these devices. Another usage example is the various access tokens, secrets and other credentials that we need to hide from the test scripts.  
 
 ## Configuration with .spannerci.yml
 Spanner CI enables continuous integration by adding a `.spannerci.yml` file in the root directory of your repository. This, together with some more configuration options that are mentioned later, make every new commit or pull request to automatically trigger Spanner. 
@@ -116,14 +116,23 @@ A stage is defined by a list of parameters that define the stage behavior.
 
 (1),(2): Please contact us to get a full list of the currently supported device builders and OTA update methods. To get started, make sure to check the [Examples](#examples) section.
 
-The testing stage contains the `script` parameter to define the path to the testing script. This is a Python script that we can write all the functional tests. Example test scripts can be found under `examples` folder. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
-
-1. `Basic Tests`, which only perform one action and one test, to showcase that individual test function
-2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
-3. `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
-
 ## Test Scripts
-TODO 
+Test Scripts are user defined scripts that contain a list of functional tests to be performed in one or more devices. Currently, they can be written in Python and we can trigger them by using the `script` parameter from the `Testing` stage. In the most primitive form, a test script looks like the one below:
+
+```python
+from Spanner import Spanner
+
+def validate_dummy_test_case():
+    spanner.assertTrue(1);
+
+if __name__ == "__main__":
+    validate_dummy_test_case()
+```
+
+In the above example, the validate_dummy_test_case() test case will pass because the assertion performed in this test case is true. Assertions provided by the `Spanner` module and cover various types of values. 
+
+More sofisticated test scripts are shown in the [Examples](#examples) section.
+
 
 ## Testboards
 TODO
@@ -133,3 +142,9 @@ Spanner provides a Command Line Interface (CLI) which can be used instead of the
 
 ## Examples
 TODO
+
+Example test scripts can be found under `testing` folder in this repository. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
+
+1. `Basic Tests`, which only perform one action and one test, to showcase that individual test function
+2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
+3. `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
