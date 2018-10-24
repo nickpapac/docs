@@ -2,6 +2,7 @@
 
 ## Table of Contents
 * [Introduction](#introduction)
+* [How It Works](#how-it-works)
 * [Creating An Account](#creating-an-account) 
 * [Configuration with .spannerci.yml](#configuration-with-spannerciyml)
 * [TODO...](#todo)
@@ -10,9 +11,12 @@
 ## Introduction
 [Spanner CI](https://spannerci.com) is a Continuous Integration Platform for IoT and Embedded Devices. It can be used for automated code quality checks, automated firmware builds and automated functional tests in real hardware that run with every new version of your firmware.
 
-This repository contains everything that is needed to get started with Spanner CI. It's highly recommended to make a fork of this repository and use it as a starting point to understand how Spanner CI can be easily integrated with your own github repository.
+This repository contains everything that is needed to get started with Spanner CI. It's highly recommended to make a fork of this repository and use it as a starting point to understand how Spanner CI can be easily integrated with your own github repository. More details about this can be found in the [Examples](#examples) section.
 
-In the next sections you'll find detailed information of how to setup Spanner CI. In short, we will create an account in Spanner CI Platform and use a `.spannerci.yml` configuration file in the root directory of our repository to trigger Spanner CI for every commit or pull request. Each time Spanner CI is triggered, it reads the instructions from `.spannerci.yml` file and starts the relevant service, like automated builds or automated tests. All the test scripts are also part of the repository.  
+In the following sections you'll find detailed information about Spanner CI.
+
+## How It Works
+As soon as we create an account and make a new Project in Spanner CI Platform, we can add a `.spannerci.yml` configuration file in the root directory of our source code repository to trigger Spanner CI for every commit or pull request. Each time Spanner CI is triggered, it reads the instructions from `.spannerci.yml` file and starts one or more virtual environments for firmware code quality checks, firmware builds or functional testing of the hardware. In the latter case, a user-defined test script is provided in the `.spannerci.yml` file that contains all the device functional tests. Before running the tests, each device under test is updated with the new firmware. Moreover, a Spanner Testboard can be used to test all inputs and outputs of our device. The Testboard is connected both with the device (wired or wireless) and with the Spanner Platform over the network. Please make sure to check the [Examples](#examples) section for more details.
 
 ## Creating an Account
 If you haven't used Spanner CI before, you can create a new account by visiting the [Create an Account](http://console.spannerci.com/app/accounts/register) page. To sign-up, you can either use your GitHub account (recommended) or create a new account directly from Spanner.
