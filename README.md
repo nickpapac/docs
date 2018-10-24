@@ -11,6 +11,7 @@
 * [Test Scripts](#test-scripts)
 * [Testboards](#testboards)
 * [Spanner CLI](#spanner-cli)
+* [Examples](#examples)
 
 ## Introduction
 [Spanner CI](https://spannerci.com) is a Continuous Integration Platform for IoT and Embedded Devices. It can be used for automated code quality checks, automated firmware builds and automated functional tests in real hardware that run with every new version of your firmware.
