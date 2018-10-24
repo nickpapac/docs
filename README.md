@@ -5,9 +5,12 @@
 * [How It Works](#how-it-works)
 * [Creating An Account](#creating-an-account) 
 * [Projects](#projects)
+* [Project Jobs](#project-jobs)
+* [Environment Variables](#environment-variables)
 * [Configuration with .spannerci.yml](#configuration-with-spannerciyml)
+* [Test Scripts](#test-scripts)
 * [Testboards](#testboards)
-* [TODO...](#todo)
+* [Spanner CLI](#spanner-cli)
 
 ## Introduction
 [Spanner CI](https://spannerci.com) is a Continuous Integration Platform for IoT and Embedded Devices. It can be used for automated code quality checks, automated firmware builds and automated functional tests in real hardware that run with every new version of your firmware.
@@ -43,6 +46,24 @@ Spanner supports the creation of one or more projects for working with different
 3. Select the preferred source code repository.
 4. Add one or more [Testboards](#testboards).
 5. Click Finish to complete the project creation.
+
+## Project Jobs
+Spanner executes each test script inside a virtual environment. For each run, a new job is created. Jobs can run automatically (through pull requests) or manually as described below.
+
+### Job Creation from Pull Request (TODO)
+This will automatically trigger a Spanner CI Job on each Pull Request
+
+1. Click on the Pull request button in the Github Repository homepage.
+2. Create a new Pull request and wait for the notification messages delivered from the SpannerCI platform.
+3. After the completion of the test cases, a message will appear together with a link to the SpannerCI platform with more information, on the run itself.
+
+### Job History (TODO)
+1. Click on Jobs from the navigation menu on the left side of the dashboard.
+2. A list of the latest running jobs will be shown.
+3. By clicking the Stats button on each job, enables us to watch each running test and their corresponding results.
+
+## Environment Variables
+TODO
 
 ## Configuration with .spannerci.yml
 Spanner CI enables continuous integration by adding a `.spannerci.yml` file in the root directory of your repository. This, together with some more configuration options that are mentioned later, make every new commit or pull request to automatically trigger Spanner. 
@@ -108,26 +129,11 @@ The testing stage contains the `script` parameter to define the path to the test
 2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
 3. `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
 
-## Testboards
-TODO
-
 ## Test Scripts
 TODO 
 
-## Project Jobs
-Spanner executes each test script inside a virtual environment. For each run, a new job is created. Jobs can run automatically (through pull requests) or manually as described below.
-
-### Job Creation from Pull Request (TODO)
-This will automatically trigger a Spanner CI Job on each Pull Request
-
-1. Click on the Pull request button in the Github Repository homepage.
-2. Create a new Pull request and wait for the notification messages delivered from the SpannerCI platform.
-3. After the completion of the test cases, a message will appear together with a link to the SpannerCI platform with more information, on the run itself.
-
-### Job History (TODO)
-1. Click on Jobs from the navigation menu on the left side of the dashboard.
-2. A list of the latest running jobs will be shown.
-3. By clicking the Stats button on each job, enables us to watch each running test and their corresponding results.
+## Testboards
+TODO
 
 ## Spanner CLI
 Spanner provides a Command Line Interface (CLI) which can be used instead of the Web Interface. For more information please contact us.
