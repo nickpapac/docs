@@ -72,7 +72,7 @@ A stage is defined by a list of parameters that define the stage behavior.
 
 | Keyword | Required | Description |
 | :--- | :--- | :--- |
-| level         | No  | Defines the service level |
+| level         | No  | Defines the Spanner Service level |
 | builder       | Yes | Defines the preferred build environment (1) |
 | source        | Yes | Defines the source directory of the firmware |
 | script        | Yes | Defines the script path or command to execute |
