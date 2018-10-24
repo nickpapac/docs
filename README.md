@@ -131,7 +131,19 @@ if __name__ == "__main__":
 
 In the above example, the validate_dummy_test_case() test case will pass because the assertion performed in this test case is true. Assertions provided by the `Spanner` module and cover various types of values. 
 
-More sofisticated test scripts are shown in the [Examples](#examples) section.
+One of the most important aspects of Spanner Test Scripts is the Spanner [Testboard](#testboards), which enables the user to write hardware-in-the-loop functional tests. In other words, user is able to test the inputs and outputs of the device. Testboards can be added to the test scripts by importing the `Testboard` module. For example:
+```python
+from Testboard import Testboard
+testboard = Testboard("testboard_name")
+```
+
+Example test scripts can be found under `testing` folder in this repository. Choose the one that you want to experiment with by defining the right path in the `script` parameter of `Testing` stage. The test cases are split into three categories:
+
+1. `Basic Tests`, which only perform one action and one test, to showcase that individual test function
+2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
+3. `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
+
+To understand the usage of Test Scripts in more real life scenarios, make sure to check the [Examples](#examples) section.
 
 
 ## Testboards
@@ -142,9 +154,3 @@ Spanner provides a Command Line Interface (CLI) which can be used instead of the
 
 ## Examples
 TODO
-
-Example test scripts can be found under `testing` folder in this repository. Choose the one that you want to experiment with by defining the right path. The test cases are split into three categories:
-
-1. `Basic Tests`, which only perform one action and one test, to showcase that individual test function
-2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
-3. `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
