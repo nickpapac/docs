@@ -52,7 +52,8 @@ build_binary:
     source: firmware/
     script: make
     artifacts:
-        - binary_output/
+        - binaries/
+        - output.logs
     post_flight:
     on_failure:
     on_success:
@@ -75,7 +76,7 @@ A stage is defined by a list of parameters that define the stage behavior.
 | builder       | Yes | Defines the preferred build environment (1) |
 | source        | Yes | Defines the source directory of the firmware |
 | script        | Yes | Defines the script path or command to execute |
-| artifacts     | No  | Defines the artifacts path |
+| artifacts     | No  | Defines a list of files or directories that will store the output results of the stage |
 | device_update | No  | Enables OTA update of devices before testing |
 | devices       | Yes | Defines a list of devices to apply the OTA update |
 | ota_method    | Yes | Defines the preferred method for OTA updates (2) |
