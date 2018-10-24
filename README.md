@@ -139,9 +139,9 @@ testboard = Testboard("testboard_name")
 
 Example test scripts can be found under `testing` folder in this repository. Choose the one that you want to experiment with by defining the right path in the `script` parameter of `Testing` stage. The test cases are split into three categories:
 
-1. `Basic Tests`, which only perform one action and one test, to showcase that individual test function
-2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
-3. `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
+* `Basic Tests`, which only perform one action and one test, to showcase that individual test function
+* `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
+* `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
 
 To understand the usage of Test Scripts in more real life scenarios, make sure to check the [Examples](#examples) section.
 
