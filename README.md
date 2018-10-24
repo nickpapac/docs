@@ -16,7 +16,7 @@ This repository contains everything that is needed to get started with Spanner C
 In the following sections you'll find detailed information about Spanner CI.
 
 ## How It Works
-As soon as we create an account and make a new Project in Spanner CI Platform, we can add a [.spannerci.yml](#configuration-with-spannerciyml) configuration file in the root directory of our source code repository to trigger Spanner CI for every commit or pull request. Each time Spanner CI is triggered, it reads the instructions from `.spannerci.yml` file and starts one or more virtual environments for firmware code quality checks, firmware builds or functional testing of the hardware. In the latter case, a user-defined test script is provided in the `.spannerci.yml` file that contains all the device functional tests. Before running the tests, each device under test is updated with the new firmware. Moreover, a Spanner Testboard can be used to test all inputs and outputs of our device. The Testboard is connected both with the device (wired or wireless) and with the Spanner Platform over the network. Please make sure to check the [Examples](#examples) section for more details.
+As soon as we create an account and make a new Project in Spanner CI Platform, we can add a [.spannerci.yml](#configuration-with-spannerciyml) configuration file in the root directory of our source code repository to trigger Spanner CI for every commit or pull request. Each time Spanner CI is triggered, it reads the instructions from `.spannerci.yml` file and starts one or more virtual environments for firmware code quality checks, firmware builds or functional testing of the hardware. In the latter case, a user-defined test script is provided in the `.spannerci.yml` file that contains all the device functional tests. Before running the tests, each device under test is updated with the new firmware. Moreover, a Spanner [Testboard](#testboards) can be used to test all inputs and outputs of our device. The Testboard is connected both with the device (wired or wireless) and with the Spanner Platform over the network. Please make sure to check the [Examples](#examples) section for more details.
 
 ## Creating an Account
 If you haven't used Spanner CI before, you can create a new account by visiting the [Create an Account](http://console.spannerci.com/app/accounts/register) page. To sign-up, you can either use your GitHub account (recommended) or create a new account directly from Spanner.
@@ -40,7 +40,7 @@ Spanner supports the creation of one or more projects for working with different
 1. Select Projects from the navigation menu on the left side of the dashboard.
 2. Click on New Project.
 3. Select the preferred source code repository.
-4. Add one or more Testboards.
+4. Add one or more [Testboards](#testboards).
 5. Click Finish to complete the project creation.
 
 ## Configuration with .spannerci.yml
@@ -107,14 +107,16 @@ The testing stage contains the `script` parameter to define the path to the test
 2. `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
 3. `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
 
-## Project Jobs (TODO)
-Spanner executes each test script inside a virtual environment. For each run, a new job is created. Jobs can run automatically (through pull requests) or manually as described below.
-
-### Manual Job Creation (TODO)
+## Testboards
 TODO
 
-### Job Creation from Pull Request (TODO)
+## Test Scripts
+TODO 
 
+## Project Jobs
+Spanner executes each test script inside a virtual environment. For each run, a new job is created. Jobs can run automatically (through pull requests) or manually as described below.
+
+### Job Creation from Pull Request (TODO)
 This will automatically trigger a Spanner CI Job on each Pull Request
 
 1. Click on the Pull request button in the Github Repository homepage.
