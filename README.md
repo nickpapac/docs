@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
 In the above example, the validate_dummy_test_case() test case will pass because the assertion performed in this test case is true. Assertions provided by the `Spanner` module and cover various types of values. 
 
-One of the most important aspects of Spanner Test Scripts is the Spanner [Testboard](#testboards), which enables the user to write hardware-in-the-loop functional tests. In other words, user is able to test the inputs and outputs of the device. Testboards can be added to the test scripts by importing the `Testboard` module. For example:
+One of the most important aspects of Spanner Test Scripts are the Spanner [Testboards](#testboards), that enable the user to write hardware-in-the-loop functional tests. In other words, user is able to test the inputs and outputs of the device. Testboards can be added to the test scripts by importing the `Testboard` module. For example:
 ```python
 from Testboard import Testboard
 testboard = Testboard("testboard_name")
