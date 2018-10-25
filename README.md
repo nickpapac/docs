@@ -146,7 +146,6 @@ Example test scripts can be found under `testing` folder in this repository. Cho
 
 To understand the usage of Test Scripts, make sure to check the [Quick Start Guide](#quick-start-guide) section.
 
-
 ## Testboards
 Spanner Testboard are hardware boards loaded with custom firmware from Spanner. They enable the control of inputs and outputs of the Product either wired or wireless. They communicate with Spanner CI Platform over a network interface. Testboards can be added from the [Testboards](http://console.spannerci.com/app/testboards) Page in the Spanner CI Platform. To add a new Testboard, the Testboard's Device ID is needed, which is printed on the board. The Testboard name can be used in the [Test Scripts](#test-scripts) to refer to a specific Testboard.
 
@@ -156,6 +155,13 @@ Spanner provides a Command Line Interface (CLI) which can be used instead of the
 ## Quick Start Guide
 This section is a step-by-step guide for all the new Spanner CI users. If you still have questions, please contact us.
 
+The structure of the current repository is explained below:
+* firmware: This folder contains an example firmware application for the [Particle](https://www.particle.io) Photon device.
+* testing: This folder contains a number of example [Test Scripts](#test-scripts).
+* .spannerci.yml: This is the [Spanner configuration file](#configuration-with-spannerciyml)
+* Readme.md: The current Readme file.
+
+#### Example 1: Use the Spanner Build Service
 * Step 1: Use a GitHub account. Currently Spanner works with GitHub for Git hosting so a [GitHub account](https://github.com) is required.
 
 * Step 2: Fork the current repository (https://github.com/spannerci/spanner-examples) into your own account. This repository contains all the files that you need to get started, together with examples. From now on it is assumed that you work with the forked repository from your account.
@@ -171,4 +177,6 @@ This section is a step-by-step guide for all the new Spanner CI users. If you st
 * Step 7: As soon as you create the Pull Request in the above step, Spanner CI will be triggered and start checking if the Pull Request is valid. In our specific case it will build the firmware again and if everything is good, GiHub will show a `All checks have passed` notification.
 
 * Step 8: Go to the [Spanner CI](https://spannerci.com) Platform and check the newly created Job under the Project that you created (click on the project name to see the Project Info and the Job that was created). There you can see more info about the Job and download the binary file for the Particle Photon device.
+
+Repeat Steps 6-8 as many times as you like and enjoy continuous integration in your firmware!
 
