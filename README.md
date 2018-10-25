@@ -102,6 +102,7 @@ A stage is defined by a list of parameters that define the stage behavior.
 | :--- | :--- | :--- |
 | level         | No  | Defines the Spanner Service level |
 | builder       | Yes | Defines the preferred build environment (1) |
+| env_vars      | No  | Defines a list with environment variables that may needed by the builder |
 | source        | Yes | Defines the source directory of the firmware |
 | script        | Yes | Defines the script path or command to execute |
 | artifacts     | No  | Defines a list of files or directories that will store the output results of the stage |
