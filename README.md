@@ -154,4 +154,21 @@ Spanner Testboard are hardware boards loaded with custom firmware from Spanner. 
 Spanner provides a Command Line Interface (CLI) which can be used instead of the Web Interface. For more information please contact us.
 
 ## Quick Start Guide
-TODO
+This section is a step-by-step guide for all the new Spanner CI users. If you still have questions, please contact us.
+
+* Step 1: Use a GitHub account. Currently Spanner works with GitHub for Git hosting so a [GitHub account](https://github.com) is required.
+
+* Step 2: Fork the current repository (https://github.com/spannerci/spanner-examples) into your own account. This repository contains all the files that you need to get started, together with examples. From now on it is assumed that you work with the forked repository from your account.
+
+* Step 3: [Create a Spanner Account](#creating-an-account).
+
+* Step 4: [Create a Spanner Project](#projects). Do not define any Testboards.
+
+* Step 5: Open and review the `.spannerci.yml`, located in the root of your forked repository. As you can see, only the `build_binary` stage is enabled. From the `build_binary` parameters, we understand that the `particle photon` builder will be used and a `make` command will build a binary named `photon.bin` ready to be flashed in a [Particle](https://www.particle.io) Photon device. Leave the default values and close the file.
+
+* Step 6: Now that we setup everything, we will make a change in our firmware in a new branch, create a Pull Request and check how Spanner will be triggered. Open the application.cpp file under the firmware folder, directly from the GitHub page by clicking the `Edit this file` pencil icon. Just add a new line and then go in the bottom of the page, and check the `Create a new branch for this commit and start a pull request.`. Click the `Commit Changes` button.
+
+* Step 7: As soon as you create the Pull Request in the above step, Spanner CI will be triggered and start checking if the Pull Request is valid. In our specific case it will build the firmware again and if everything is good, GiHub will show a `All checks have passed` notification.
+
+* Step 8: Go to the [Spanner CI](https://spannerci.com) Platform and check the newly created Job under the Project that you created (click on the project name to see the Project Info and the Job that was created). There you can see more info about the Job and download the binary file for the Particle Photon device.
+
