@@ -80,8 +80,7 @@ build_binary:
     source: firmware/
     script: make
     artifacts:
-        - binaries/
-        - output.logs
+        - binary.bin
     post_flight:
     on_failure:
     on_success:
