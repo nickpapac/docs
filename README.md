@@ -87,7 +87,7 @@ build_binary:
     on_success:
 
 testing:
-    script: examples/basic-tests/GPIO/read-digital-output/scenario.py
+    script: testing/basic-tests/GPIO/read-digital-output/scenario.py
     device_update:
         devices:
             - $DEVID_1
