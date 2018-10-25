@@ -194,17 +194,17 @@ For this example, a Particle Photon device is required. This example uses the Sp
 * Step 2: Go to the Project Settings Page of Spanner CI Platform and add a new Environment Variable, with name `DEVID_1` and value the [Particle Device ID](https://community.particle.io/t/finding-your-device-id/26531).
 * Step 3: Open the `.spannerci.yml`, located in the root of your forked repository. Add the following lines in the end of the file, to enable the `testing` stage with OTA device updates with a device binary that was produced in th `build_binary` stage:
 
-```
-testing:
-    script: testing/sample-test-script.py
-    device_update:
-        devices:
-            - $DEVID_1
-        ota_method: particle
-        binary: auto
-```
+    ```
+    testing:
+        script: testing/sample-test-script.py
+        device_update:
+            devices:
+                - $DEVID_1
+            ota_method: particle
+            binary: auto
+    ```
 
-Step 4: Follow the Steps 6-8 from Example 1.
+* Step 4: Follow the Steps 6-8 from Example 1.
 
 Repeat Step 4 as many times as you like and enjoy continuous integration with automated testing and Over-The-Air updates in your firmware!
 
