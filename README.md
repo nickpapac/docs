@@ -161,7 +161,7 @@ The structure of the current repository is explained below:
 * .spannerci.yml: This is the [Spanner configuration file](#configuration-with-spannerciyml)
 * Readme.md: The current Readme file.
 
-#### Example 1: Use the Spanner Build Service
+#### Example 1: Continuous Integration using the Spanner Build Service
 * Step 1: Use a GitHub account. Currently Spanner works with GitHub for Git hosting so a [GitHub account](https://github.com) is required.
 
 * Step 2: Fork the current repository (https://github.com/spannerci/spanner-examples) into your own account. This repository contains all the files that you need to get started, together with examples. From now on it is assumed that you work with the forked repository from your account.
@@ -179,4 +179,35 @@ The structure of the current repository is explained below:
 * Step 8: Go to the [Spanner CI](https://spannerci.com) Platform and check the newly created Job under the Project that you created (click on the project name to see the Project Info and the Job that was created). There you can see more info about the Job and download the binary file for the Particle Photon device.
 
 Repeat Steps 6-8 as many times as you like and enjoy continuous integration in your firmware!
+
+#### Example 2: Using the Spanner Testing Service
+* Step 1: Follow the Steps 1-4 from Example 1.
+* Step 2: Open the `.spannerci.yml`, located in the root of your forked repository. Comment everyhting in the `build_binary` stage and uncomment everything from the `testing` stage. Commit the changes (You can do this directly from the GitHub web page, using the `Edit this file` pencil icon. As you can see from the `script` parameter of the `testing` stage, the `sample-test-script.py` script will be executed.
+* Step 3: Follow the Steps 6-8 from Example 1.
+
+Repeat Step 3 as many times as you like and enjoy continuous integration with automated testing in your firmware!
+
+#### Example 3: Using Build and Testing Service with Over-The-Air device updates
+For this example, a Particle Photon device is required. This example uses the Spanner CI Build Binary service to build a new binary for the Photon device and then uses the Spanner CI Testing Service to update the firmware of the Photon device and run the functional tests included in the `sample-test-script.py`.
+
+* Step 1: Follow the Steps 1-4 from Example 1.
+* Step 2: Go to the Project Settings Page of Spanner CI Platform and add a new Environment Variable, with name `DEVID_1` and value the [Particle Device ID](https://community.particle.io/t/finding-your-device-id/26531).
+* Step 3: Open the `.spannerci.yml`, located in the root of your forked repository. Add the following lines in the end of the file, to enable the `testing` stage with OTA device updates with a device binary that was produced in th `build_binary` stage:
+
+```
+testing:
+    script: testing/sample-test-script.py
+    device_update:
+        devices:
+            - $DEVID_1
+        ota_method: particle
+        binary: auto
+```
+
+Step 4: Follow the Steps 6-8 from Example 1.
+
+Repeat Step 4 as many times as you like and enjoy continuous integration with automated testing and Over-The-Air updates in your firmware!
+
+
+
 
