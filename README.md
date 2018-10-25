@@ -11,17 +11,17 @@
 * [Test Scripts](#test-scripts)
 * [Testboards](#testboards)
 * [Spanner CLI](#spanner-cli)
-* [Examples](#examples)
+* [Quick Start Guide](#quick-start-guide)
 
 ## Introduction
 [Spanner CI](https://spannerci.com) is a Continuous Integration Platform for IoT and Embedded Devices. It can be used for automated code quality checks, automated firmware builds and automated functional tests in real hardware that run with every new version of your firmware.
 
-This repository contains everything that is needed to get started with Spanner CI. It's highly recommended to make a fork of this repository and use it as a starting point to understand how Spanner CI can be easily integrated with your own github repository. More details about this can be found in the [Examples](#examples) section.
+This repository contains everything that is needed to get started with Spanner CI. It's highly recommended to make a fork of this repository and use it as a starting point to understand how Spanner CI can be easily integrated with your own github repository. More details about this can be found in the [Quick Start Guide](#quick-start-guide) section.
 
 In the following sections you'll find detailed information about Spanner CI.
 
 ## How It Works
-As soon as we create an account and make a new Project in Spanner CI Platform, we can add a [.spannerci.yml](#configuration-with-spannerciyml) configuration file in the root directory of our source code repository to trigger Spanner CI for every commit or pull request. Each time Spanner CI is triggered, it reads the instructions from `.spannerci.yml` file and starts one or more virtual environments for firmware code quality checks, firmware builds or functional testing of the hardware. In the latter case, a user-defined test script is provided in the `.spannerci.yml` file that contains all the device functional tests. Before running the tests, each device under test is updated with the new firmware. Moreover, a Spanner [Testboard](#testboards) can be used to test all inputs and outputs of our device. The Testboard is connected both with the device (wired or wireless) and with the Spanner Platform over the network. Please make sure to check the [Examples](#examples) section for more details.
+As soon as we create an account and make a new Project in Spanner CI Platform, we can add a [.spannerci.yml](#configuration-with-spannerciyml) configuration file in the root directory of our source code repository to trigger Spanner CI for every commit or pull request. Each time Spanner CI is triggered, it reads the instructions from `.spannerci.yml` file and starts one or more virtual environments for firmware code quality checks, firmware builds or functional testing of the hardware. In the latter case, a user-defined test script is provided in the `.spannerci.yml` file that contains all the device functional tests. Before running the tests, each device under test is updated with the new firmware. Moreover, a Spanner [Testboard](#testboards) can be used to test all inputs and outputs of our device. The Testboard is connected both with the device (wired or wireless) and with the Spanner Platform over the network. Please make sure to check the [Quick Start Guide](#quick-start-guide) section for more details.
 
 ## Creating an Account
 If you haven't used Spanner CI before, you can create a new account by visiting the [Create an Account](http://console.spannerci.com/app/accounts/register) page. To sign-up, you can either use your GitHub account (recommended) or create a new account directly from Spanner.
@@ -115,7 +115,7 @@ A stage is defined by a list of parameters that define the stage behavior.
 | on_failure    | No  | Override a set of commands that are executed on failure of stage |
 | on_success    | No  | Override a set of commands that are executed on success of stage |
 
-(1),(2): Please contact us to get a full list of the currently supported device builders and OTA update methods. To get started, make sure to check the [Examples](#examples) section.
+(1),(2): Please contact us to get a full list of the currently supported device builders and OTA update methods. To get started, make sure to check the [Quick Start Guide](#quick-start-guide) section.
 
 ## Test Scripts
 Test Scripts are user defined scripts that contain a list of functional tests to be performed in one or more devices. Currently, they can be written in Python and we can trigger them by using the `script` parameter from the `Testing` stage. In the most primitive form, a test script looks like the one below:
@@ -144,7 +144,7 @@ Example test scripts can be found under `testing` folder in this repository. Cho
 * `Simple Tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
 * `Complex Tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
 
-To understand the usage of Test Scripts in more real life scenarios, make sure to check the [Examples](#examples) section.
+To understand the usage of Test Scripts, make sure to check the [Quick Start Guide](#quick-start-guide) section.
 
 
 ## Testboards
@@ -153,5 +153,5 @@ Spanner Testboard are hardware boards loaded with custom firmware from Spanner. 
 ## Spanner CLI
 Spanner provides a Command Line Interface (CLI) which can be used instead of the Web Interface. For more information please contact us.
 
-## Examples
+## Quick Start Guide
 TODO
