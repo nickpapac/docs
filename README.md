@@ -208,6 +208,7 @@ For this example, a Particle Photon device is required. This example uses the Sp
 
 Repeat Step 4 as many times as you like and enjoy continuous integration with automated testing and Over-The-Air updates in your firmware!
 
-
+#### Example 4: Using Testboards with the Spanner Testing Service
+TODO
 
 
