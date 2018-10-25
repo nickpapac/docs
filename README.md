@@ -155,7 +155,7 @@ Spanner provides a Command Line Interface (CLI) which can be used instead of the
 ## Quick Start Guide
 This section is a step-by-step guide for all the new Spanner CI users. If you still have questions, please contact us.
 
-The structure of the current repository is explained below:
+The structure of the current repository is shown below:
 * firmware: This folder contains an example firmware application for the [Particle](https://www.particle.io) Photon device.
 * testing: This folder contains a number of example [Test Scripts](#test-scripts).
 * .spannerci.yml: This is the [Spanner configuration file](#configuration-with-spannerciyml)
