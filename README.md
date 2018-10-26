@@ -136,7 +136,7 @@ A stage is defined by a list of parameters that define the stage behavior.
 (1),(2): Please contact us to get a full list of the currently supported device builders and OTA update methods. To get started, make sure to check the [Quick Start Guide](#quick-start-guide) section.
 
 ## Test Scripts
-Test Scripts are user defined scripts that contain a list of functional tests to be performed in one or more devices. Currently, they can be written in Python and we can trigger them by using the `script` parameter from the `Testing` stage. In the most primitive form, a test script looks like the one below:
+Test Scripts are user defined scripts that contain a list of functional tests to be performed in one or more devices. Currently, they can be written in Python and we can trigger them by using the `script` parameter from the `Testing` stage. Test Scripts are executed within a virtual Linux based environment. In the most primitive form, a test script looks like the one below:
 
 ```python
 from Spanner import Spanner
@@ -156,13 +156,13 @@ from Testboard import Testboard
 testboard = Testboard("testboard_name")
 ```
 
-Example test scripts can be found under `testing` folder in this repository. Choose the one that you want to experiment with by defining the right path in the `script` parameter of `Testing` stage. The test cases are split into three categories:
+Example Test Scripts can be found under `testing` folder in this repository. Choose the one that you want to experiment with by defining the right path in the `script` parameter of `Testing` stage. The Test Scripts are split into three categories:
 
 * `1.basic-tests`, which only perform one action and one test, to showcase that individual test function
 * `2.simple-tests`, which perform a simple real-world scenario, i.e. *Turn Light on through Network Command*
 * `3.complex-tests`, which perform a more common and complex real-world scenario, and whose goal is to showcase what an actual Functional test for a real product would test, with more than one assertions and using multiple APIs.
 
-To understand the usage of Test Scripts, make sure to check the [Quick Start Guide](#quick-start-guide) section.
+Each Test Script contains documentation for the specific use case. To understand the usage of Test Scripts, make sure to check the [Quick Start Guide](#quick-start-guide) section.
 
 ## Testboards
 Spanner Testboards are hardware boards loaded with custom firmware from Spanner. They enable the control of inputs and outputs of the Product either wired or wireless. They communicate with Spanner CI Platform over a network interface. Testboards can be added from the [Testboards](http://console.spannerci.com/app/testboards) Page in the Spanner CI Platform and they can be then assigned to a Spanner Project. To add a new Testboard, the Testboard's Device ID is needed, which is printed on the board. The Testboard name can be used in the [Test Scripts](#test-scripts) to refer to a specific Testboard.
