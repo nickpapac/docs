@@ -56,7 +56,24 @@ New Jobs can also be created manually. Each Job belongs to a specific Project. A
 Also note, that because of the Spanner integration with GitHub, it's possible to watch the Job result directly from GitHub, after creating a new Pull Request.
 
 ## Environment Variables
-Spanner supports the definition of environment variables for each Project. These variables can be defined from the Project Settings page and can be then used in the [.spannerci.yml](#configuration-with-spannerciyml) file and in the user defined [test scripts](#test-scripts). For example, we can use environment variables to define a list of device IDs that will be later used in the `.spannerci.yml` file to update these devices. Another usage example is the various access tokens, secrets and other credentials that we need to hide from the test scripts. To reference an environment variable in the `.spannerci.yml` file, use the `$` prefix, e.g `$MY_VAR`. In the test script you can reference the environment variables as you do with any linux environment variable.
+Spanner supports the definition of environment variables for each Project. These are variables that will be imported in the Linux based virtual environment that runs a [Spanner Job](#jobs). They are defined from `Environment Variables` section in the Project Settings page. They can be referenced in the [.spannerci.yml](#configuration-with-spannerciyml) file using the `$` prefix, e.g `$MY_VAR`, and we use them in two diferrent ways: 
+    a) as a value to a stage parameter, e.g `devices: $DEVICE_ID` and 
+    b) inside the `env_vars` parameter that will import them directly in the virtual environment, for example:
+
+```
+    env_vars:
+        - $DB_NAME
+        - $ACCESS_TOKEN
+```
+
+In the latter case, we can use them as Linux environment variables inside the test script, for example: 
+
+```python
+    os.environ['DB_NAME']
+    os.environ['ACCESS_TOKEN']
+```
+
+Spanner supports a number of pre-defined environment variables, that are either mandatory to use some of the Spanner builders and OTA update methods or just convenient. All Spanner environment variables start with the `SPN_` prefix. Please contact us to get a full list of the Spanner pre-defined environment variables.
 
 ## Configuration with .spannerci.yml
 Spanner CI enables continuous integration by adding a `.spannerci.yml` file in the root directory of your repository. This, together with some more configuration options that are mentioned later, make every new commit or pull request to automatically trigger Spanner. 
