@@ -61,16 +61,16 @@ Spanner supports the definition of environment variables for each Project. These
     b) inside the `env_vars` parameter that will import them directly in the virtual environment, for example:
 
 ```
-    env_vars:
-        - $DB_NAME
-        - $ACCESS_TOKEN
+env_vars:
+    - $DB_NAME
+    - $ACCESS_TOKEN
 ```
 
 In the latter case, we can use them as Linux environment variables inside the test script, for example: 
 
 ```python
-    os.environ['DB_NAME']
-    os.environ['ACCESS_TOKEN']
+os.environ['DB_NAME']
+os.environ['ACCESS_TOKEN']
 ```
 
 Spanner supports a number of pre-defined environment variables, that are either mandatory to use some of the Spanner builders and OTA update methods or just convenient. All Spanner environment variables start with the `SPN_` prefix. Please contact us to get a full list of the Spanner pre-defined environment variables.
