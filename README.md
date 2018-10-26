@@ -88,6 +88,8 @@ build_binary:
 testing:
     script: testing/basic-tests/GPIO/read-digital-output/scenario.py
     device_update:
+        env_vars:
+            - $SPN_PARTICLE_TOKEN
         devices:
             - $DEVID_1
             - $DEVID_2
@@ -101,7 +103,7 @@ A stage is defined by a list of parameters that define the stage behavior.
 | :--- | :--- | :--- |
 | level         | No  | Defines the Spanner Service level |
 | builder       | Yes | Defines the preferred build environment (1) |
-| env_vars      | No  | Defines a list with environment variables that may needed by the builder |
+| env_vars      | No  | Defines a list with environment variables that will be passed in the virtual environment |
 | source        | Yes | Defines the source directory of the firmware |
 | script        | Yes | Defines the script path or command to execute |
 | artifacts     | No  | Defines a list of files or directories that will store the output results of the stage |
@@ -187,16 +189,18 @@ Repeat Steps 6-8 as many times as you like and enjoy continuous integration in y
 Repeat Step 3 as many times as you like and enjoy continuous integration with automated testing in your firmware!
 
 #### Example 3: Using Build and Testing Service with Over-The-Air device updates
-For this example, a Particle Photon device is required. This example uses the Spanner CI Build Binary service to build a new binary for the Photon device and then uses the Spanner CI Testing Service to update the firmware of the Photon device and run the functional tests included in the `sample-test-script.py`.
+For this example, a Particle Photon device is required and an active account in the Particle Platform. This example uses the Spanner CI Build Binary service to build a new binary for the Photon device and then uses the Spanner CI Testing Service to update the firmware of the Photon device and run the functional tests included in the `sample-test-script.py`.
 
 * Step 1: Follow the Steps 1-4 from Example 1.
-* Step 2: Go to the Project Settings Page of Spanner CI Platform and add a new Environment Variable, with name `DEVID_1` and value the [Particle Device ID](https://community.particle.io/t/finding-your-device-id/26531).
+* Step 2: Go to the Project Settings Page of Spanner CI Platform and add one Environment Variable, with name `DEVID_1` and value the [Particle Device ID](https://community.particle.io/t/finding-your-device-id/26531) and another with name `SPN_PARTICLE_TOKEN` and value the [Particle Access Token](https://docs.particle.io/guide/how-to-build-a-product/authentication/#what-39-s-an-access-token-) of your account.
 * Step 3: Open the `.spannerci.yml`, located in the root of your forked repository. Add the following lines in the end of the file, to enable the `testing` stage with OTA device updates with a device binary that was produced in th `build_binary` stage:
 
     ```
     testing:
         script: testing/sample-test-script.py
         device_update:
+            env_vars:
+                - $SPN_PARTICLE_TOKEN
             devices:
                 - $DEVID_1
             ota_method: particle
