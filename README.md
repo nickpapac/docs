@@ -66,7 +66,7 @@ env_vars:
     - $ACCESS_TOKEN
 ```
 
-In the latter case, we can use them as Linux environment variables inside the test script, for example: 
+In the latter case, we can reference them as Linux environment variables inside the Python test script, for example: 
 
 ```python
 os.environ['DB_NAME']
