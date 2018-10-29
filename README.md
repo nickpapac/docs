@@ -104,9 +104,9 @@ build_binary:
 
 testing:
     script: testing/basic-tests/GPIO/read-digital-output/scenario.py
+    env_vars:
+        - $SPN_PARTICLE_TOKEN
     device_update:
-        env_vars:
-            - $SPN_PARTICLE_TOKEN
         devices:
             - $DEVID_1
             - $DEVID_2
@@ -215,9 +215,9 @@ For this example, a Particle Photon device is required and an active account in 
     ```
     testing:
         script: testing/sample-test-script.py
+        env_vars:
+            - $SPN_PARTICLE_TOKEN
         device_update:
-            env_vars:
-                - $SPN_PARTICLE_TOKEN
             devices:
                 - $DEVID_1
             ota_method: particle
