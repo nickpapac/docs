@@ -1,9 +1,6 @@
 build_binary:
     builder: particle photon
     source: firmware/
-    script: make
-    artifacts:
-        - photon.bin
 
 #testing:
 #    script: testing/sample-test-script.py
