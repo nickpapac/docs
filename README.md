@@ -95,9 +95,6 @@ build_binary:
     pre_flight:
     builder: particle photon
     source: firmware/
-    script: make
-    artifacts:
-        - binary.bin
     post_flight:
     on_failure:
     on_success:
